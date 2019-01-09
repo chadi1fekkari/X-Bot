@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const devs = ['389090790984515594'];
+const devs = ['458640422420480012'];
 const db = require('quick.db');
 const premium = ['470896018603376640']
 const client = new Discord.Client();   
@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = '!';
+const prefix = 'X.';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -721,7 +721,7 @@ message.channel.send(
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/qEPMJgb**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/xJgF4RE**")
      
      
   message.channel.sendEmbed(embed);
@@ -737,7 +737,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("434845976050794516").send(
+client.users.get("458640422420480012").send(
     "\n" + "**" + "? السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ? المرسل : " + "**" +
@@ -1900,7 +1900,7 @@ client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=435392018693488641&scope=bot&permissions=2146958591')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=530011582910955521&scope=bot&permissions=2146958591')
   .setDescription(`**
   New Server Add ZeusSHOP Community © ?
 اسم السيرفر: ${guild.name}
@@ -1911,9 +1911,9 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=435392018693488641&scope=bot&permissions=2146958591')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=530011582910955521&scope=bot&permissions=2146958591')
   .setDescription(`**
-  Server Kicked ZeusSHOP Community © :cry:
+  Server Kicked X Bot © :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
 client.channels.get("474127377245667328").sendEmbed(embed)
