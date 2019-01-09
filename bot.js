@@ -174,7 +174,7 @@ if (message.content.startsWith('X.help')) { /// This is The DMS Code Send The He
     message.author.sendEmbed(embed).then(msg => {
 
         msg.react('?').then( r => {
-            msg.react('?')
+            msg.react('💀')
 
 
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
