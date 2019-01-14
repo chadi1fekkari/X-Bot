@@ -384,7 +384,7 @@ client.on('message', msg => {
 };
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.trans")) {
+    if (message.content.startsWith("X.trans")) {
       
     let toTrans = message.content.split(' ').slice(1);
     let language;
@@ -398,7 +398,7 @@ client.on('message', message => {
             message.channel.send({embed: {
                 color: 3447003,
                 author: {
-                  name: 'ZeusSHOP Community ©\'s tr',
+                  name: 'X Bot \'s tr',
                   icon_url: client.user.avatarURL
                 },
                 fields: [{
@@ -654,7 +654,7 @@ message.channel.send({embed});
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.bans")) {
+    if (message.content.startsWith("X.bans")) {
         message.guild.fetchBans()
         .then(bans => message.channel.send(`Number of banned persons **${bans.size}** `))
 }
@@ -1048,8 +1048,8 @@ let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
 let request = `Requested By ${message.author.username}`;
 message.channel.send(`**Are You sure you want to clear the chat?**`).then(msg => {
 msg.react('?')
-.then(() => msg.react('?'))
-.then(() =>msg.react('?'))
+.then(() => msg.react('✅'))
+.then(() =>msg.react('❌'))
 
 let reaction1Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
 let reaction2Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
@@ -1440,7 +1440,7 @@ if (message.content.startsWith(prefix + 'mypoints')) {
 });
 client.on('message', message => {
     if(message.content == '^vip-servers') {
-             if(!message.author.id === '434845976050794516') return;
+             if(!message.author.id === '458640422420480012') return;
     var gimg;
     var gname;
     var gmemb;
@@ -1471,7 +1471,7 @@ client.on('message', message => {
     if (!points[message.author.id]) points[message.author.id] = { 
         points: 0,
       };
-    if (message.content == "G.ايموجى") { 
+    if (message.content == "X.ايموجى") { 
         if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     
     const type = require('./emojis.json'); 
@@ -1915,7 +1915,7 @@ client.on('guildDelete', guild => {
   Server Kicked X Bot :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("532632067708551169").sendEmbed(embed)
+client.channels.get("532631901794730014").sendEmbed(embed)
 });
 var type = [
     {
@@ -1940,7 +1940,7 @@ var type = [
     },
     {
             "type": "ما هو أطول نهر في آسيا ؟",
-        "answers": ["اليانجستي"]
+        "answers": ["اليانجستي"] 
     },
     {
             "type": "ما هو أقرب كوكب إلى الشمس ؟",
