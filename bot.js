@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = '!';
+const prefix = 'X.';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -35,7 +35,7 @@ var ti={}
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,'!help','Type !help',`${client.users.size} Members`,'!inv','By: Mohamed | MohamedSamaYT'];
+    var setGame = [`${client.guilds.size} Server`,'X.help','Type X.help X.support',`${client.users.size} Members`,'X.inv','By: !  SizGooo ツ'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -318,7 +318,7 @@ client.on('message', function(msg) {
 });
  client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='G.count')
+      if(message.content =='X.count')
 	 
       message.reply(`**${message.guild.memberCount}**`);
     });
@@ -385,7 +385,7 @@ client.on('message', msg => {
 };
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.trans")) {
+    if (message.content.startsWith("X.trans")) {
       
     let toTrans = message.content.split(' ').slice(1);
     let language;
@@ -410,7 +410,7 @@ client.on('message', message => {
                 timestamp: new Date(),
                 footer: {
                   icon_url: client.user.avatarURL,
-                  text: "ZeusSHOP Community ©"
+                  text: "X Bot"
                 }
             }}
             )
@@ -491,7 +491,7 @@ if (command == "z5rf") {
 });
 
 client.on('message', message => {
-    if (message.content === "G.rooms") {
+    if (message.content === "X.rooms") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -661,7 +661,7 @@ client.on('message', message => {
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.avatar")) {
+    if (message.content.startsWith("X.avatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -717,7 +717,7 @@ message.channel.send(
 
 
    client.on('message', message => {
-     if (message.content === "G.support") {
+     if (message.content === "X.support") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -737,7 +737,7 @@ if (!message.channel.guild) return;
 let args = message.content.split(" ").slice(1).join(" ");
 
 
-client.users.get("434845976050794516").send(
+client.users.get("458640422420480012").send(
     "\n" + "**" + "? السيرفر :" + "**" +
     "\n" + "**" + "» " + message.guild.name + "**" +
     "\n" + "**" + " ? المرسل : " + "**" +
@@ -749,7 +749,7 @@ let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription(':mailbox_with_mail: تم ارسال الرسالة الى صاحب البوت بنجاح')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("By : Baron")
+     .setFooter("By : !  SizGooo ツ")
                                                 
 
 message.channel.send(embed);
@@ -1048,12 +1048,12 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return      message.channel
 let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
 let request = `Requested By ${message.author.username}`;
 message.channel.send(`**Are You sure you want to clear the chat?**`).then(msg => {
-msg.react('?')
-.then(() => msg.react('?'))
-.then(() =>msg.react('?'))
+msg.react('✅')
+.then(() => msg.react('✅'))
+.then(() =>msg.react('❌'))
 
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+let reaction1Filter = (reaction, user) => reaction.emoji.name === '✅' && user.id === message.author.id;
+let reaction2Filter = (reaction, user) => reaction.emoji.name === '❌' && user.id === message.author.id;
 
 let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
 let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
@@ -1441,7 +1441,7 @@ if (message.content.startsWith(prefix + 'mypoints')) {
 });
 client.on('message', message => {
     if(message.content == '^vip-servers') {
-             if(!message.author.id === '434845976050794516') return;
+             if(!message.author.id === '458640422420480012') return;
     var gimg;
     var gname;
     var gmemb;
@@ -1472,7 +1472,7 @@ client.on('message', message => {
     if (!points[message.author.id]) points[message.author.id] = { 
         points: 0,
       };
-    if (message.content == "G.ايموجى") { 
+    if (message.content == "X.ايموجى") { 
         if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     
     const type = require('./emojis.json'); 
@@ -1844,7 +1844,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="!";
+    let id = message.author.id,prefix="X.";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -1900,23 +1900,23 @@ client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=435392018693488641&scope=bot&permissions=2146958591')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=530011582910955521&scope=bot&permissions=2146958591')
   .setDescription(`**
-  New Server Add ZeusSHOP Community © ?
+  New Server Add X Bot ?
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("474127377245667328").sendEmbed(embed)
+client.channels.get("532631901794730014").sendEmbed(embed)
 });
 client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/oauth2/authorize?client_id=435392018693488641&scope=bot&permissions=2146958591')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=530011582910955521&scope=bot&permissions=2146958591')
   .setDescription(`**
-  Server Kicked ZeusSHOP Community © :cry:
+  Server Kicked X Bot :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("474127377245667328").sendEmbed(embed)
+client.channels.get("532631901794730014").sendEmbed(embed)
 });
 var type = [
     {
@@ -2056,7 +2056,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="!";
+    let id = message.author.id,prefix="X.";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -2233,7 +2233,7 @@ if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
   };
   if(!message.guild) return;
-    let id = message.author.id,prefix="!";
+    let id = message.author.id,prefix="X.";
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
         let r = (new Date).getTime() - spee[id];
         r = 15*1000 - r;
@@ -2465,7 +2465,7 @@ const zead = [
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ];
  client.on('message', message => {
- if (message.content.startsWith('G.مريم')) {
+ if (message.content.startsWith('X.مريم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -2541,7 +2541,7 @@ var Za7f = [
 ];
 
 client.on('message', message => {
- if (message.content.startsWith("G.عقاب")) {
+ if (message.content.startsWith("X.عقاب")) {
               if(!message.channel.guild) return message.reply('** This command only for servers**');
 var embed = new Discord.RichEmbed()
 .setColor('RANDOM')
@@ -2941,37 +2941,37 @@ client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id == 410835593451405312) return;
+  if (message.author.id == 458640422420480012) return;
 
 
 if (message.content.startsWith(prefix + 'playing')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '458640422420480012') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
 client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
 } else
 
 if (message.content.startsWith(prefix + 'streem')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '458640422420480012') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
 client.user.setGame(argresult, "http://twitch.tv/y04zgamer");
     message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
 } else
 
 if (message.content.startsWith(prefix + 'setname')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '458640422420480012') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
   client.user.setUsername(argresult).then
       message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
   return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
 } else
 
 if (message.content.startsWith(prefix + 'setavatar')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '458640422420480012') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
 client.user.setAvatar(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
 } else
 
 
 if (message.content.startsWith(prefix + 'watching')) {
-if (message.author.id !== '434845976050794516') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+if (message.author.id !== '458640422420480012') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setActivity(argresult, {type : 'watching'});
  message.channel.sendMessage(`**${argresult}** : تم تغيير الووتشينق الى`)
 }
@@ -3474,7 +3474,7 @@ room.send(tests);
 }
 });
 client.on('message', message => {
-if(message.content.includes("<@435392018693488641>")) {
+if(message.content.includes("<@458640422420480012>")) {
 message.channel.startTyping()
 setTimeout(() => { 
 message.channel.stopTyping()
