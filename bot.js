@@ -317,7 +317,7 @@ client.on('message', function(msg) {
 });
  client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='G.count')
+      if(message.content =='X.count')
 	 
       message.reply(`**${message.guild.memberCount}**`);
     });
@@ -660,7 +660,7 @@ client.on('message', message => {
 }
 });
 client.on('message', message => {
-    if (message.content.startsWith("G.avatar")) {
+    if (message.content.startsWith("X.avatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
