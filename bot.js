@@ -58,7 +58,7 @@ client.on('ready', function(){
  console.log(` ???????????????????`);
 });
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+if (message.content.startsWith('X.help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`
 ***__وصف عن البوت__***
 **
