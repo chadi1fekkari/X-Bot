@@ -171,18 +171,18 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
     .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
 
-    message.author.sendEmbed(embed).then(msg => {
+    message.dm.sendEmbed(embed).then(msg => {
 
-        msg.react('?').then( r => {
-            msg.react('?')
-
-
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
+        msg.react('◀').then( r => {
+            msg.react('▶')
 
 
-        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
-        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 20000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 20000});
 
 
 
@@ -195,8 +195,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
         })
         forwards.on('collect', r => {
             if (page === pages.length) return;
-      
-      page++;
+            page++;
             embed.setDescription(pages[page-1]);
             embed.setFooter(`Page ${page} of ${pages.length}`);
             msg.edit(embed)
@@ -204,7 +203,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
         })
     })
     }
-}); 
+});
 
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
