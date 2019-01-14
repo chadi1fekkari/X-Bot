@@ -214,7 +214,6 @@ if(message.author.bot) return;
 if(!credits[message.author.id]) credits[message.author.id] = {
     credits: 50
 };
-
 let userData = credits[message.author.id];
 let m = userData.credits;
 
