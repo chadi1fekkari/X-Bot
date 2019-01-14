@@ -171,7 +171,7 @@ if (message.content.startsWith('X.help')) { /// This is The DMS Code Send The He
     .setFooter(`Page ${page} of ${pages.length}`)
     .setDescription(pages[page-1])
 
-    message.channel.sendEmbed(embed).then(msg => {
+    message.author.sendEmbed(embed).then(msg => {
 
         msg.react('◀').then( r => {
             msg.react('▶')
