@@ -164,7 +164,7 @@ if (message.content.startsWith('X.help')) { /// This is The DMS Code Send The He
 **
    
 `]
-    let page = 1;
+let page = 1;
 
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
@@ -204,7 +204,6 @@ if (message.content.startsWith('X.help')) { /// This is The DMS Code Send The He
     })
     }
 });
-
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
 
@@ -225,10 +224,7 @@ fs.writeFile("./creditsCode.json", JSON.stringify(credits), (err) => {
   }
   
     if(message.content.startsWith(prefix + "credit" || prefix + "credits")) {
-message.channel.send(`**${message.author.username}, your :credit_card: balance is \`\`${userData.credits}\`\`.**`);
-}
-});
-
+message.channel.send(`**${message.author.username}, your :credit_card: balance is \`\`${
 client.on('message', async message => {
     let amount = 250;
     if(message.content.startsWith(prefix + "daily")) {
